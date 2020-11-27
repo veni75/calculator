@@ -1,20 +1,19 @@
 'use strict';
 
-const number = document.querySelectorAll('.number');
-const sign = document.querySelectorAll('.sign');
-const equal = document.querySelector('.equal');
 const input = document.querySelector('input');
-const torles = document.querySelector('.default');
 let inputText;
 let inputNumber = [];
 let memory;
-let result;
+let result={};
 
 const writeToInput = (text) => {
     inputText = (input.value);
     input.value = inputText + text;
 }
-number.forEach(item => item.addEventListener('click', () => writeToInput(item.textContent)));
+
+document
+    .querySelectorAll('.number')
+    .forEach(item => item.addEventListener('click', () => writeToInput(item.textContent)));
 
 const signToMemory = (text) => {
     if (inputNumber.length === 0) {
@@ -26,30 +25,33 @@ const signToMemory = (text) => {
     writeToInput(text);
     memory = text;
 }
-sign.forEach(item => item.addEventListener('click', () => signToMemory(item.textContent)));
+
+document
+    .querySelectorAll('.sign')
+    .forEach(item => item.addEventListener('click', () => signToMemory(item.textContent)));
 
 const calculate = () => {
     inputNumber.push(parseInt(input.value.slice(1)));
-    if (memory === '+') {
-        result = inputNumber.reduce((prev, current) => (prev + current));
+    result = {
+        '+': inputNumber.reduce((prev, current) => (prev + current)),
+        '-': inputNumber.reduce((prev, current) => (prev - current)),
+        'x': inputNumber.reduce((prev, current) => (prev * current)),
+        '÷': inputNumber.reduce((prev, current) => (prev / current)),
     }
-    if (memory === '-') {
-        result = inputNumber.reduce((prev, current) => (prev - current));
-    }
-    if (memory === 'x') {
-        result = inputNumber.reduce((prev, current) => (prev * current));
-    }
-    if (memory === '÷') {
-        result = inputNumber.reduce((prev, current) => (prev / current));
-    }    
-    inputNumber.splice(0, 2, result);
-    input.value = result;
+    inputNumber.splice(0, 2, result[memory]);
+    input.value = result[memory];
 }
-equal.addEventListener('click', calculate);
 
-const torlesfv = () => {
+document
+    .querySelector('.equal')
+    .addEventListener('click', calculate);
+
+const deleteFn = () => {
     input.value = '';
     result = 0;
     inputNumber = [];
 }
-torles.addEventListener('click', torlesfv);    
+
+document
+    .querySelector('.default')
+    .addEventListener('click', deleteFn);    
