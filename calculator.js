@@ -17,7 +17,8 @@ document
 
 const signToMemory = (text) => {
     if (inputNumber.length === 0) {
-        inputNumber.push(parseInt(input.value));
+        inputNumber.push(parseFloat(input.value));
+        console.log(inputNumber[0]);
     } else {
         calculate();
     }
@@ -31,7 +32,7 @@ document
     .forEach(item => item.addEventListener('click', () => signToMemory(item.textContent)));
 
 const calculate = () => {
-    inputNumber.push(parseInt(input.value.slice(1)));
+    inputNumber.push(parseFloat(input.value.slice(1)));
     result = {
         '+': inputNumber.reduce((prev, current) => (prev + current)),
         '-': inputNumber.reduce((prev, current) => (prev - current)),
