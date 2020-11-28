@@ -4,51 +4,70 @@
 
 .calculator {
     border: 1px solid gray;
-    margin: 2rem auto;  
-    width: 400px; 
+    margin: 2rem auto;
+    width: 400px;
 }
 
 input {
     height: 3rem;
-    margin: 10px;        
+    margin: 10px;
     width: 380px;
 }
 
-.sign {
-    background-color: rgb(207, 205, 205); 
-    border: 1px solid gray;   
-    margin: 10px;
-    padding: 1rem 2rem;
-    width: 78px; 
+.buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
-.buttons{
+.buttons__sign {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
 
-.buttons__main{
-    display: flex;
-    flex: 75%;    
-    flex-wrap: wrap;
+.sign {
+    background-color: rgb(205, 205, 205);
+    border: 1px solid #808080;
+    /* margin: 10px; */
+    padding: 16px 32px;
+    /* width: 78px;  */
+    justify-content: space-around;
 }
 
-.buttons__equal{
-    flex: 25%;
+.buttons__main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
+
+.buttons__numbers {    
+    flex: 75%;    
+}
+
+.buttons__numbersThree {
+    display: flex;    
+    justify-content: space-around;
+}
+
+.buttons__equal {
+    display: flex;
+    flex: 25%;
+    justify-content: center;
+}
+
 .number {
     background-color: rgb(252, 252, 252);
-    border: 1px solid gray;    
-    margin: 10px;
-    padding: 1rem 2rem;
-    width: 78px;
+    border: 1px solid gray;
+    margin: 10px 0;
+    padding: 16px 32px;
+    justify-content: center;    
 }
 
 .equal {
+    align-self: stretch;
     background-color: rgb(6, 183, 253);
-    border: 1px solid rgb(6, 183, 253);
-    width: 78px;
-    margin: 10px;
-    padding: 7.8rem 2rem;
+    border: 1px solid rgb(6, 183, 253);    
+    margin: 10px 0;    
+    padding: 0 32px;    
 }
