@@ -40,7 +40,7 @@ const calculate = () => {
         '÷': inputNumber.reduce((prev, current) => (prev / current)),
     }
     inputNumber.splice(0, 2, result[memory]);
-    if (Number.isNaN(NaN)) {
+    if (Number.isNaN(result[memory])) {
         input.value = 'Error';
     } else {
         input.value = result[memory];
