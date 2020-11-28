@@ -29,9 +29,8 @@ input {
 .sign {
     background-color: rgb(205, 205, 205);
     border: 1px solid #808080;
-    /* margin: 10px; */
-    padding: 16px 32px;
-    /* width: 78px;  */
+    margin-bottom: 10px;
+    padding: 16px 32px;    
     justify-content: space-around;
 }
 
@@ -45,7 +44,7 @@ input {
     flex: 75%;    
 }
 
-.buttons__numbersThree {
+.buttons__numbersPart {
     display: flex;    
     justify-content: space-around;
 }
@@ -59,7 +58,7 @@ input {
 .number {
     background-color: rgb(252, 252, 252);
     border: 1px solid gray;
-    margin: 10px 0;
+    margin-bottom: 10px;
     padding: 16px 32px;
     justify-content: center;    
 }
@@ -68,6 +67,6 @@ input {
     align-self: stretch;
     background-color: rgb(6, 183, 253);
     border: 1px solid rgb(6, 183, 253);    
-    margin: 10px 0;    
+    margin-bottom: 10px;    
     padding: 0 32px;    
 }
