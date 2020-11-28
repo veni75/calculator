@@ -4,7 +4,7 @@ const input = document.querySelector('input');
 let inputText;
 let inputNumber = [];
 let memory;
-let result={};
+let result = {};
 
 const writeToInput = (text) => {
     inputText = (input.value);
@@ -40,7 +40,11 @@ const calculate = () => {
         '÷': inputNumber.reduce((prev, current) => (prev / current)),
     }
     inputNumber.splice(0, 2, result[memory]);
-    input.value = result[memory];
+    if (Number.isNaN(NaN)) {
+        input.value = 'Error';
+    } else {
+        input.value = result[memory];
+    }
 }
 
 document
