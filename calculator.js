@@ -6,9 +6,8 @@ let inputNumber = [];
 let memory;
 let result = {};
 
-const writeToInput = (text) => {
-    inputText = (input.value);
-    input.value = inputText + text;
+const writeToInput = (text) => {    
+    input.value += text;
 }
 
 document
